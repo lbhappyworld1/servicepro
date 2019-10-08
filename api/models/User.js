@@ -155,6 +155,18 @@ without necessarily having a billing card.`
       example: 1502844074211
     },
 
+    accountCard: {
+      type: 'string',
+      description: 'persion card id',
+      example: '44020319850212471X'
+    },
+
+    accountPhoto:{
+      type:'number',
+      description: 'persion photo',
+      example:13823314165
+    }
+
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
     //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
     //  ╚═╝╩ ╩╚═╝╚═╝═╩╝╚═╝
