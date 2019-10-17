@@ -22,6 +22,7 @@ module.exports.routes = {
   'GET /contact':            { action:   'view-contact' },
 
   'GET /signup':             { action: 'entrance/view-signup' },
+  'GET /signupm':            { view: 'pages/entrance/signup', locals: {layout: 'layouts/layout_onhb'}},
   'GET /email/confirm':      { action: 'entrance/confirm-email' },
   'GET /email/confirmed':    { action: 'entrance/view-confirmed-email' },
 
@@ -32,6 +33,9 @@ module.exports.routes = {
   'GET /account':            { action: 'account/view-account-overview' },
   'GET /account/password':   { action: 'account/view-edit-password' },
   'GET /account/profile':    { action: 'account/view-edit-profile' },
+
+
+  'GET /classroom/manager/:unused?':    { action: 'classroom/view-classroom-manager' },
 
 
   //  ╔╦╗╦╔═╗╔═╗  ╦═╗╔═╗╔╦╗╦╦═╗╔═╗╔═╗╔╦╗╔═╗   ┬   ╔╦╗╔═╗╦ ╦╔╗╔╦  ╔═╗╔═╗╔╦╗╔═╗
@@ -61,6 +65,7 @@ module.exports.routes = {
   'POST  /api/v1/entrance/send-password-recovery-email': { action: 'entrance/send-password-recovery-email' },
   'POST  /api/v1/entrance/update-password-and-login':    { action: 'entrance/update-password-and-login' },
   'POST  /api/v1/deliver-contact-form-message':          { action: 'deliver-contact-form-message' },
+  'POST  /api/v1/crate-class-room ':{action: 'classroom/create-class-room'}
   
 
 };

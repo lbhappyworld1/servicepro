@@ -1,0 +1,137 @@
+<div id="manager-classroom" v-cloak>
+  <div class="container">
+    <div class="container-fluid">
+      <div class="row justify-content-md-center">
+        <div class="col-sm">
+          <h2>班级管理</h2>
+        </div>
+        <div class="col-sm">
+          <div class="form-inline d-none ml-2 d-md-block" @click="clickModalButton()">
+            <p class="btn btn-outline-dark">创建班级</p>
+          </div>
+          <p class="nav-item nav-link text-info ml-2 d-block d-md-none btn btn-outline-dark"
+            @click="clickModalButton()">创建班级</p>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="container-fluid">
+      <div class="alert alert-secondary mt-2" role="alert">
+        Your updated email address needs verification. Until you click the link sent to
+        <strong><%= me.emailChangeCandidate %></strong>, you'll still need to sign in as
+        <strong><%= me.emailAddress %></strong>.
+      </div>
+    </div>
+    <div class="d-flex flex-row flex-wrap ">
+      <div class="card p-1 mr-3 ml-3 mb-3 align-items-center" style="width: 18rem;" v-for="(item, index) in result" :key="index">
+        <div class="card-body">
+          <a href="#" class="card-link"><h5 class="card-title">{{item.classromName}}</h5></a>
+          <h4 class="card-title pricing-card-title text-success">${{item.priceName}} <small
+              class="text-muted">元/人</small></h4>
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-row mb-1"> <div class="mr-3 text-muted">{{item.signupStart}}</div><span  class="badge badge-info">开始</span ></div>
+            <div class="d-flex flex-row"><div class="mr-3 text-muted">{{item.signupStart}}</div><span  class="badge badge-info">结束</span ></div>
+          </div>
+          <a href="#" class="badge badge-dark">{{item.personLiable}}</a>
+          <a href="#" class="badge badge-secondary">{{item.classstate}}</a>
+        </div>
+      </div>
+    </div>
+
+
+
+    <router-view></router-view>
+
+    <!--  ╔═╗═╗ ╦╔═╗╔╦╗╔═╗╦  ╔═╗  ┌┬┐┌─┐┌┬┐┌─┐┬
+        ║╣ ╔╩╦╝╠═╣║║║╠═╝║  ║╣   ││││ │ ││├─┤│
+        ╚═╝╩ ╚═╩ ╩╩ ╩╩  ╩═╝╚═╝  ┴ ┴└─┘─┴┘┴ ┴┴─┘  -->
+    <modal class="example-modal" v-if="modal==='example'" @close="closeExampleModal()" v-cloak>
+      <div class="modal-header">
+        <h2 class="modal-title">添加班级</h2>
+        <!-- <p>创建你的班级、包括班级名称、负责人、班级状态.</p> -->
+        <hr />
+        <button type="button" class="modal-close-button" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <ajax-form action="createClassroom" :syncing.sync="syncing" :cloud-error.sync="cloudError"
+          @submitted="submittedForm()" :handle-parsing="handleParsingForm">
+          <div class="form-group">
+            <label for="classroom-name">班级名</label>
+            <input class="form-control" id="classroom-name" type="text"
+              :class="[formErrors.classromName ? 'is-invalid' : '']" v-model.trim="formData.classromName"
+              placeholder="请输入账号" autocomplete="name" focus-first>
+            <div class="invalid-feedback" v-if="formErrors.classromName">请填写班级名称.</div>
+          </div>
+          <div class="form-group">
+            <div class="row align-items-center justify-content-center">
+              <div class="col-md-auto">
+                <label for="price-name">价格</label>
+              </div>
+              <div class="col">
+                <input class="form-control" id="price-name" type="text"
+                  :class="[formErrors.priceName ? 'is-invalid' : '']" v-model.trim="formData.priceName"
+                  placeholder="请输入价格" autocomplete="name">
+                <div class="invalid-feedback" v-if="formErrors.priceName">请填写价格.</div>
+              </div>
+              <div class="col-md-auto">
+                <label for="price-unit">元/每人(人民币)</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="signup-start">报名时间开始</label>
+            <div class="form-group">
+              <div class="input-group date" id="datetimepicker2" data-target-input="nearest">
+                <input type="text" id="signup-start" v-model.trim="formData.signupStart"
+                  class="form-control datetimepicker-input" :class="[formErrors.signupStart ? 'is-invalid' : '']"
+                  data-target="#datetimepicker2" />
+                <div class="input-group-append" data-target="#datetimepicker2" data-toggle="datetimepicker">
+                  <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                </div>
+                <div class="invalid-feedback" v-if="formErrors.signupStart">请选择开始时间.</div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="signup-end">报名时间结束</label>
+            <div class="form-group">
+              <div class="input-group date" id="datetimepicker3" data-target-input="nearest">
+                <input type="text" id="signup-end" v-model.trim="formData.signupEnd"
+                  class="form-control datetimepicker-input" :class="[formErrors.signupEnd ? 'is-invalid' : '']"
+                  data-target="#datetimepicker3" />
+                <div class="input-group-append" data-target="#datetimepicker3" data-toggle="datetimepicker">
+                  <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                </div>
+                <div class="invalid-feedback" v-if="formErrors.signupEnd">请选择开始时间.</div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>负责人:</label>
+            <div class="form-group">
+              <select id="single" class="form-control form-control-chosen" data-placeholder="请选择"
+                v-model.trim="formData.personLiable">
+                <option v-for="(item, index) in selectList" :key="index">{{item}}</option>
+              </select>
+            </div>
+            <div class="invalidfd" v-if="formErrors.personLiable">请选择负责人.</div>
+          </div>
+          <div class="form-group">
+            <label>班级状态:</label>
+            <select id="single2" class="form-control form-control-chosen" data-placeholder="请选择">
+              <option v-for="(item, index) in selectList" :key="index">{{item}}</option>
+            </select>
+          </div>
+          <div class="invalidfd" v-if="formErrors.classstate">请选择班级状态.</div>
+          <div class="form-group">
+            <div class="modal-footer flex-row-reverse justify-content-between">
+              <button type="button" data-dismiss="modal" class="btn btn-info">Close</button>
+              <ajax-button type="submit" :syncing="syncing" class="btn btn-dark">保存</ajax-button>
+            </div>
+          </div>
+        </ajax-form>
+      </div>
+    </modal>
+  </div>
+</div>
+<%- /* Expose locals as `window.SAILS_LOCALS` :: */ exposeLocalsToBrowser() %>
