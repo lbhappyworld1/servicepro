@@ -6,8 +6,8 @@ module.exports = {
 
   description: 'create a class room  for manager.',
 
-
-  extendedDescription: `创建班级并同步到数据库`,
+  //创建班级并同步到数据库
+  extendedDescription: `create class room and sync to db.`,
 
   inputs: {
     classromName: {

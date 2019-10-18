@@ -122,6 +122,10 @@ parasails.registerPage('manager-classroom', {
   //  ║║║║ ║ ║╣ ╠╦╝╠═╣║   ║ ║║ ║║║║╚═╗
   //  ╩╝╚╝ ╩ ╚═╝╩╚═╩ ╩╚═╝ ╩ ╩╚═╝╝╚╝╚═╝
   methods: {
+    gotoinfo(classroomid){
+      window.location = "/classroom/manager/classroominfo?classromId="+classroomid;
+    
+    },
     loaddatePicker: async function () {
       let methis = this;
       $(function () {

@@ -106,6 +106,13 @@ Cloud.setup({
         "personLiable",
         "classstate"
       ]
+    },
+    "updateClassroominfo": {
+      "verb": "POST",
+      "url": "/api/v1/update-class-roominfo",
+      "args": [
+        "classroominfo",
+      ]
     }
   }
   /* eslint-enable */

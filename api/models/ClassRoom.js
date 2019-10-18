@@ -52,6 +52,13 @@ module.exports = {
             type: 'string',
             example: 'user db id',
             description: '任务结束时间.',
+          },
+
+          classroominfo: {
+            required: false,
+            type: 'string',
+            example: '"{a:1}"',
+            description: '班级详情json 数据 以key-value{"培训地点":"南头小学"}方式给出',
           }
     },
 };

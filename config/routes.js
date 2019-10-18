@@ -36,6 +36,7 @@ module.exports.routes = {
 
 
   'GET /classroom/manager/:unused?':    { action: 'classroom/view-classroom-manager' },
+  'GET /classroom/manager/classroominfo':    { action: 'classroom/view-classroom-info' },
 
 
   //  ╔╦╗╦╔═╗╔═╗  ╦═╗╔═╗╔╦╗╦╦═╗╔═╗╔═╗╔╦╗╔═╗   ┬   ╔╦╗╔═╗╦ ╦╔╗╔╦  ╔═╗╔═╗╔╦╗╔═╗
@@ -65,7 +66,9 @@ module.exports.routes = {
   'POST  /api/v1/entrance/send-password-recovery-email': { action: 'entrance/send-password-recovery-email' },
   'POST  /api/v1/entrance/update-password-and-login':    { action: 'entrance/update-password-and-login' },
   'POST  /api/v1/deliver-contact-form-message':          { action: 'deliver-contact-form-message' },
-  'POST  /api/v1/crate-class-room ':{action: 'classroom/create-class-room'}
+  'POST  /api/v1/crate-class-room ':                     {action: 'classroom/create-class-room'},
+  'POST  /api/v1/update-class-roominfo':                 {action:'classroom/update-class-roominfo'}
+
   
 
 };

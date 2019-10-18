@@ -48,6 +48,7 @@ the account verification message.)`,
   exits: {
 
     success: {
+      statusCode: 200,
       description: 'New user account was created successfully.'
     },
 

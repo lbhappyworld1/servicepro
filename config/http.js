@@ -53,8 +53,11 @@ module.exports.http = {
     //   var skipper = require('skipper');
     //   var middlewareFn = skipper({ strict: true });
     //   return middlewareFn;
-    // })(),
-
+    // })(), 
+    /*
+    appid:wxd01fdc34cb1cce99
+    AppSecret:4625eb509f588c33e5f6c080a60c577b
+    */ 
   },
 
 };
