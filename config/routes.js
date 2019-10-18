@@ -37,6 +37,7 @@ module.exports.routes = {
 
   'GET /classroom/manager/:unused?':    { action: 'classroom/view-classroom-manager' },
   'GET /classroom/manager/classroominfo':    { action: 'classroom/view-classroom-info' },
+  'GET /classroom/registeruser':    { action: 'classroom/view-classroom-regester' ,locals: {layout: 'layouts/layout_onhb'}},
 
 
   //  ╔╦╗╦╔═╗╔═╗  ╦═╗╔═╗╔╦╗╦╦═╗╔═╗╔═╗╔╦╗╔═╗   ┬   ╔╦╗╔═╗╦ ╦╔╗╔╦  ╔═╗╔═╗╔╦╗╔═╗
