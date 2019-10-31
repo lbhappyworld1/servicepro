@@ -16,7 +16,44 @@ you provided for it.
 Note that this action does not check to see whether or not the requesting user was
 actually logged in.  (If they weren't, then this action is just a no-op.)`,
 
+  inputs: {
 
+    signature: {
+      description: 'The email to try in this attempt, e.g. "irl@example.com".',
+      type: 'string',
+      required: false
+    },
+
+    timestamp: {
+      description: 'The unencrypted password to try in this attempt, e.g. "passwordlol".',
+      type: 'string',
+      required: false
+    },
+
+    nonce: {
+      description: 'Whether to extend the lifetime of the user\'s session.',
+      extendedDescription:
+        `Note that this is NOT SUPPORTED when using virtual requests (e.g. sending
+requests over WebSockets instead of HTTP).`,
+      type: 'string'
+    },
+
+    echostr: {
+      description: 'Whether to extend the lifetime of the user\'s session.',
+      extendedDescription:
+        `Note that this is NOT SUPPORTED when using virtual requests (e.g. sending
+requests over WebSockets instead of HTTP).`,
+      type: 'string'
+    },
+    body:{
+      description: 'Whether to extend the lifetime of the user\'s session.',
+      extendedDescription:
+        `Note that this is NOT SUPPORTED when using virtual requests (e.g. sending
+requests over WebSockets instead of HTTP).`,
+      type: 'string'
+    }
+
+  },
   exits: {
 
     success: {
@@ -58,7 +95,7 @@ actually logged in.  (If they weren't, then this action is just a no-op.)`,
     if (shasum === signature) {
       result = inputs.body = echostr
     }
-    sails.log.info('wxtokeninfo:'+JSON.stringify(inputs));
+    sails.log.info('wxtokeninfo:' + JSON.stringify(inputs));
     return exits.success(result);
   }
 
