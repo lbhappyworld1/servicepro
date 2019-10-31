@@ -17,6 +17,7 @@ module.exports.policies = {
   'account/logout': true,
   'view-homepage-or-redirect': true,
   'view-faq': true,
+  'wx/wxtoken':true,
   'view-contact': true,
   'legal/view-terms': true,
   'legal/view-privacy': true,
