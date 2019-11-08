@@ -69,7 +69,8 @@ module.exports.routes = {
   'POST  /api/v1/entrance/update-password-and-login':    { action: 'entrance/update-password-and-login' },
   'POST  /api/v1/deliver-contact-form-message':          { action: 'deliver-contact-form-message' },
   'POST  /api/v1/crate-class-room ':                     {action: 'classroom/create-class-room'},
-  'POST  /api/v1/update-class-roominfo':                 {action:'classroom/update-class-roominfo'}
+  'POST  /api/v1/update-class-roominfo':                 {action:'classroom/update-class-roominfo'},
+  'POST  /api/v1/regester-class-roominfo':                 {action:'classroom/regester-class-roominfo'}
 
   
 

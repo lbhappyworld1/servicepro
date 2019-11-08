@@ -22,7 +22,7 @@ parasails.registerPage('classroom-regester', {
         syncing: false,
 
         // Server error state
-        cloudError: '',
+        // cloudError: '',
 
         // Success state when form has been submitted
         cloudSuccess: false,
@@ -78,11 +78,17 @@ parasails.registerPage('classroom-regester', {
         
         handleParsingForm: function () {
             // Clear out any pre-existing error messages.
-            console.log("handleParsingForm....enter");
-            return {'classroominfo':JSON.stringify(this.classroominfoObj),'classroomid':this.classroom.id};
+            console.log("handleParsingForm....enter_regester");
+            return {'formdata':JSON.stringify(this.formData),'classroomid':this.classroom.id};
         },
-        submittedForm: async function() {
-            console.log("submittedForm enter...")
+        cloudError: async function(){
+            console.log("ddddd")
+        },
+        submittedForm: async function(result) {
+            console.log("submittedForm enter...regester"+this.result);
+            if(result.error){
+                alert("已经注册")
+            }
             // if(this.isEmailVerificationRequired) {
             //   // If email confirmation is enabled, show the success message.
             //   this.cloudSuccess = true;
@@ -92,7 +98,7 @@ parasails.registerPage('classroom-regester', {
             //   // > (Note that we re-enable the syncing state here.  This is on purpose--
             //   // > to make sure the spinner stays there until the page navigation finishes.)
             // //   this.syncing = true;
-              window.location = '/classroom/manager';
+            //   window.location = '/classroom/manager';
             // }
           }
     }

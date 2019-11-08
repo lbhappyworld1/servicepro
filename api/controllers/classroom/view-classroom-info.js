@@ -23,6 +23,19 @@ module.exports = {
   },
 
   fn: async function (input) {
+    const axios = require('axios')
+    axios.get('https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wxd01fdc34cb1cce99&secret=4625eb509f588c33e5f6c080a60c577b')
+  .then(function (response) {
+    // handle success
+    console.log(response.data);
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  .then(function () {
+    // always executed
+  });
     if(input.classromId){
       var classrooms = await ClassRoom.findOne({
         id: input.classromId,

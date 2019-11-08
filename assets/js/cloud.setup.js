@@ -113,6 +113,13 @@ Cloud.setup({
       "args": [
         "classroominfo",
       ]
+    },
+    "regesteruser": {
+      "verb": "POST",
+      "url": "/api/v1/regester-class-roominfo",
+      "args": [
+        "classroominfo",
+      ]
     }
   }
   /* eslint-enable */
