@@ -54,6 +54,17 @@ module.exports.http = {
     //   var middlewareFn = skipper({ strict: true });
     //   return middlewareFn;
     // })(), 
+    bodyParser: (function () {
+      var skipper = require('skipper')();
+      var xmlparser = require('express-xml-bodyparser')();
+      return function (req, res, next) {
+        if (req.headers && (req.headers['content-type'] == 'text/xml' ||
+            req.headers['content-type'] == 'application/xml')) {
+          return xmlparser(req, res, next);
+        }
+        return skipper(req, res, next);
+      };
+    })(),
     /*
     appid:wxd01fdc34cb1cce99
     AppSecret:4625eb509f588c33e5f6c080a60c577b
