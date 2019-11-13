@@ -97,11 +97,6 @@ requests over WebSockets instead of HTTP).`,
     // this.req.on('end', function (data) {
     //   sails.log.info('wxtokeninfo enterend:' + data);
     // });
-
-
-
-
-
     const crypto = require('crypto')
     const { signature, timestamp, nonce, echostr } = inputs
     const token = "metoken"
@@ -110,10 +105,34 @@ requests over WebSockets instead of HTTP).`,
     hash.update(arr.join(''))
     const shasum = hash.digest('hex')
     let result = false;
+
+   
+
+
     if (shasum === signature) {
       result = inputs.body = echostr
     }
     sails.log.info('wxtokeninfo:' + JSON.stringify(inputs));
+    if(result){
+      var ismessage = this.req.body.xml;
+      if(ismessage){
+        var eventme  = ismessage.event;
+        var fuser  = ismessage.fromusername;
+        var touser = ismessage.tousername;
+        var msg = '<a href="http://www.w3school.com.cn">W3School</a>';
+        //关注 和 已关注
+        if(eventme=="subscribe" || eventme == "SCAN"){
+            var mesg = `<xml>
+            <ToUserName><![CDATA[${touser}]]></ToUserName>
+            <FromUserName><![CDATA[${fuser}]]></FromUserName>
+            <CreateTime>12345678</CreateTime>
+            <MsgType><![CDATA[text]]></MsgType>
+            <Content><![CDATA[${msg}]]></Content>
+          </xml>`
+            return exits.success(mesg)
+        }
+      }
+    }
     return exits.success(result);
   }
 
