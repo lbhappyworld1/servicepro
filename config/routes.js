@@ -59,7 +59,6 @@ module.exports.routes = {
   // Note that, in this app, these API endpoints may be accessed using the `Cloud.*()` methods
   // from the Parasails library, or by using those method names as the `action` in <ajax-form>.
   'GET /wxtoken':                           { action: 'wx/wxtoken' },
-  'POST /wxtoken':                           { action: 'wx/wxtoken' },
   '/api/v1/account/logout':                           { action: 'account/logout' },
   'PUT   /api/v1/account/update-password':            { action: 'account/update-password' },
   'PUT   /api/v1/account/update-profile':             { action: 'account/update-profile' },
@@ -71,7 +70,8 @@ module.exports.routes = {
   'POST  /api/v1/deliver-contact-form-message':          { action: 'deliver-contact-form-message' },
   'POST  /api/v1/crate-class-room ':                     {action: 'classroom/create-class-room'},
   'POST  /api/v1/update-class-roominfo':                 {action:'classroom/update-class-roominfo'},
-  'POST  /api/v1/regester-class-roominfo':                 {action:'classroom/regester-class-roominfo'}
+  'POST  /api/v1/regester-class-roominfo':                 {action:'classroom/regester-class-roominfo'},
+  'POST  /wxtoken':                           { action: 'wx/wxtoken' }
 
   
 

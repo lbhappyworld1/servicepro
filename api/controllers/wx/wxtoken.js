@@ -35,7 +35,8 @@ actually logged in.  (If they weren't, then this action is just a no-op.)`,
       extendedDescription:
         `Note that this is NOT SUPPORTED when using virtual requests (e.g. sending
 requests over WebSockets instead of HTTP).`,
-      type: 'string'
+      type: 'string',
+      required: false
     },
 
     echostr: {
@@ -43,14 +44,16 @@ requests over WebSockets instead of HTTP).`,
       extendedDescription:
         `Note that this is NOT SUPPORTED when using virtual requests (e.g. sending
 requests over WebSockets instead of HTTP).`,
-      type: 'string'
+      type: 'string',
+      required: false
     },
     body:{
       description: 'Whether to extend the lifetime of the user\'s session.',
       extendedDescription:
         `Note that this is NOT SUPPORTED when using virtual requests (e.g. sending
 requests over WebSockets instead of HTTP).`,
-      type: 'string'
+      type: 'string',
+      required: false
     }
 
   },
@@ -83,7 +86,7 @@ requests over WebSockets instead of HTTP).`,
 
 
   fn: async function (inputs, exits) {
-
+    sails.log.info('wxtokeninfo enter:' + JSON.stringify(inputs));
     const crypto = require('crypto')
     const { signature, timestamp, nonce, echostr } = inputs
     const token = "metoken"
