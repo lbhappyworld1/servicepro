@@ -112,6 +112,9 @@ requests over WebSockets instead of HTTP).`,
     if (shasum === signature) {
       result = inputs.body = echostr
     }
+    sails.log.info('shasum:' + shasum);
+    sails.log.info('signature:' + signature);
+    
     sails.log.info('wxtokeninfo:' + JSON.stringify(inputs));
     if(result){
       sails.log.info('wxtokeninfo333:' + JSON.stringify(inputs));
