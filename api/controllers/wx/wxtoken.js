@@ -128,8 +128,8 @@ requests over WebSockets instead of HTTP).`,
         //关注 和 已关注
         if(eventme=="subscribe" || eventme == "SCAN"){
             var mesg = `<xml>
-            <ToUserName><![CDATA[${touser}]]></ToUserName>
-            <FromUserName><![CDATA[${fuser}]]></FromUserName>
+            <ToUserName><![CDATA[${fuser}]]></ToUserName>
+            <FromUserName><![CDATA[${touser}]]></FromUserName>
             <CreateTime>12345678</CreateTime>
             <MsgType><![CDATA[text]]></MsgType>
             <Content><![CDATA[${msg}]]></Content>
