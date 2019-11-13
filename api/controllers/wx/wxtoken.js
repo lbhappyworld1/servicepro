@@ -129,6 +129,7 @@ requests over WebSockets instead of HTTP).`,
             <MsgType><![CDATA[text]]></MsgType>
             <Content><![CDATA[${msg}]]></Content>
           </xml>`
+          sails.log.info('wxtokeninfo333:' + mesg);
             return exits.success(mesg)
         }
       }
