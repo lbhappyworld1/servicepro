@@ -124,7 +124,7 @@ requests over WebSockets instead of HTTP).`,
         var eventme  = ismessage.event;
         var fuser  = ismessage.fromusername;
         var touser = ismessage.tousername;
-        var msg = 'http://www.w3school.com.cn';
+        var msg = '你好换新加入班级sf\n<a href="http://www.911sc.cn/classroom/registeruser?classromId=5da6d770fc4a3855c8a49869">进入班级</a>';
         //关注 和 已关注
         if(eventme=="subscribe" || eventme == "SCAN"){
             var mesg = `<xml>
