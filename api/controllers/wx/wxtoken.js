@@ -87,7 +87,7 @@ requests over WebSockets instead of HTTP).`,
 
   fn: async function (inputs, exits) {
     sails.log.info('wxtokeninfo enter:' + JSON.stringify(inputs));
-    sails.log.info('wxtokeninfo enter2:' + this.req.body);
+    sails.log.info('wxtokeninfo enter2:' + JSON.stringify(this.req.body));
     // var buffer = [];
     // this.req.on('data', function (data) {
     //   buffer.push(data);
