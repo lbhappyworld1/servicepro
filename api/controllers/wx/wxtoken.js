@@ -87,7 +87,7 @@ requests over WebSockets instead of HTTP).`,
 
   fn: async function (inputs, exits) {
     sails.log.info('wxtokeninfo enter:' + JSON.stringify(inputs));
-    sails.log.info('wxtokeninfo enter:' + JSON.stringify(this.req));
+    sails.log.info('wxtokeninfo enter:' + this.req);
     
     const crypto = require('crypto')
     const { signature, timestamp, nonce, echostr } = inputs
