@@ -114,8 +114,10 @@ requests over WebSockets instead of HTTP).`,
     }
     sails.log.info('wxtokeninfo:' + JSON.stringify(inputs));
     if(result){
+      sails.log.info('wxtokeninfo333:' + JSON.stringify(inputs));
       var ismessage = this.req.body.xml;
       if(ismessage){
+        sails.log.info('wxtokeninfo333222:' + JSON.stringify(inputs));
         var eventme  = ismessage.event;
         var fuser  = ismessage.fromusername;
         var touser = ismessage.tousername;
@@ -134,6 +136,7 @@ requests over WebSockets instead of HTTP).`,
         }
       }
     }
+    sails.log.info('wxtokeninfo end:' + JSON.stringify(inputs));
     return exits.success(result);
   }
 
