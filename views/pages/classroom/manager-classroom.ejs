@@ -25,7 +25,7 @@
     <div class="d-flex flex-row flex-wrap ">
       <div class="card p-1 mr-3 ml-3 mb-3 align-items-center" style="width: 18rem;" v-for="(item, index) in result" :key="index">
         <div class="card-body">
-          <span @click="gotoinfo(item.id)" class="text-success"><h5 class="card-title">{{item.classromName}}</h5></span>
+          <span @click="gotoinfo(item)" class="text-success"><h5 class="card-title">{{item.classromName}}<span v-if="item.classroominfo" class="badge badge-info ml-1">已发布</span ></h5></span>
           <h4 class="card-title pricing-card-title text-success">${{item.priceName}} <small
               class="text-muted">元/人</small></h4>
           <div class="d-flex flex-column">

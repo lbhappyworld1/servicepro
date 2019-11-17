@@ -122,8 +122,15 @@ parasails.registerPage('manager-classroom', {
   //  ║║║║ ║ ║╣ ╠╦╝╠═╣║   ║ ║║ ║║║║╚═╗
   //  ╩╝╚╝ ╩ ╚═╝╩╚═╩ ╩╚═╝ ╩ ╩╚═╝╝╚╝╚═╝
   methods: {
-    gotoinfo(classroomid){
-      window.location = "/classroom/manager/classroominfo?classromId="+classroomid;
+    gotoinfo(item){
+      console.log()
+      var classroomid = item.id;
+      var classrelease = item.classroominfo;
+      if(classrelease){
+        window.location = "/classroom/manager/classroominforelease?classromId="+classroomid;
+      }else{
+        window.location = "/classroom/manager/classroominfo?classromId="+classroomid;
+      }
     
     },
     loaddatePicker: async function () {

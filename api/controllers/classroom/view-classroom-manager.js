@@ -20,7 +20,7 @@ module.exports = {
     //var greeting = await sails.helpers.openDatepicker();
     //查询当前用户创建的班级列表信息
     var createuser = this.req.session.userId ;
-    sails.log.info('create class room...enter user id:'+createuser);
+    sails.log.info('view classroom manager...enter user id:'+createuser);
     var classrooms = await ClassRoom.find({
       createByuserId: createuser,
     });
