@@ -130,6 +130,7 @@ requests over WebSockets instead of HTTP).`,
         }).limit(1);
         sails.log.info('wxtokeninfo333222:' + JSON.stringify(classrooms));
         var classroomsid = classrooms.id;
+        sails.log.info('wxtokeninfo333222mmm:' + classroomsid);
         var msg = `你好换新加入班级sf\n<a href="http://www.911sc.cn/classroom/registeruser?classromId=${classroomsid}"+>进入班级</a>`;
         //关注 和 已关注
         if(eventme=="subscribe" || eventme == "SCAN"){
