@@ -59,6 +59,18 @@ module.exports = {
             type: 'string',
             example: '"{a:1}"',
             description: '班级详情json 数据 以key-value{"培训地点":"南头小学"}方式给出',
+          },
+          classroomqrcodeurl: {
+            required: false,
+            type: 'string',
+            example: 'www.xxxxxx.com',
+            description: '班级详情json 数据 以key-value{"培训地点":"南头小学"}方式给出',
+          },
+          classroomqrcodeticket: {
+            required: false,
+            type: 'string',
+            example: 'XXXXXXXXX',
+            description: 'gQHt8DwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyYW1jVjBaclpkTTQxMDAwMHcwM0kAAgTBfspdAwQAAAAA',
           }
     },
 };
