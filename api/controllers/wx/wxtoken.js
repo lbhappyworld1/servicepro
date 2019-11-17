@@ -128,6 +128,7 @@ requests over WebSockets instead of HTTP).`,
         var classrooms = await ClassRoom.find({
           classroomqrcodeticket: ticket,
         }).limit(1);
+        sails.log.info('wxtokeninfo333222:' + JSON.stringify(classrooms));
         var classroomsid = classrooms.id;
         var msg = `你好换新加入班级sf\n<a href="http://www.911sc.cn/classroom/registeruser?classromId=${classroomsid}"+>进入班级</a>`;
         //关注 和 已关注
