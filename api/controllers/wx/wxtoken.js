@@ -125,9 +125,9 @@ requests over WebSockets instead of HTTP).`,
         var fuser  = ismessage.fromusername;
         var touser = ismessage.tousername;
         var ticket = ismessage.ticket;
-        var classrooms = await ClassRoom.findOne({
+        var classrooms = await ClassRoom.find({
           classroomqrcodeticket: ticket,
-        });
+        }).limit(1);
         var classroomsid = classrooms.id;
         var msg = `你好换新加入班级sf\n<a href="http://www.911sc.cn/classroom/registeruser?classromId=${classroomsid}"+>进入班级</a>`;
         //关注 和 已关注
