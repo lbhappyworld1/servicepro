@@ -130,10 +130,10 @@ requests over WebSockets instead of HTTP).`,
         }).limit(1);
         sails.log.info('wxtokeninfo333222:' + JSON.stringify(classrooms));
         var classroomsid = classrooms.id;
-        sails.log.info('wxtokeninfo333222mmm:' + classrooms.id);
-        sails.log.info('wxtokeninfo333222mmm:' + classrooms.classromName);
+        sails.log.info('wxtokeninfo333222mmm:' + classrooms[0].id);
+        sails.log.info('wxtokeninfo333222mmm:' + classrooms[0].classromName);
         
-        var msg = `你好换新加入班级sf\n<a href="http://www.911sc.cn/classroom/registeruser?classromId=${classroomsid}"+>进入班级</a>`;
+        var msg = `你好换新加入班级sf\n<a href="http://www.911sc.cn/classroom/registeruser?classromId=${classrooms[0].id}"+>进入班级</a>`;
         //关注 和 已关注
         if(eventme=="subscribe" || eventme == "SCAN"){
             var mesg = `<xml>
