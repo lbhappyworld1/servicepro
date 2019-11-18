@@ -123,7 +123,7 @@ requests over WebSockets instead of HTTP).`,
         var fuser  = ismessage.fromusername;
         var touser = ismessage.tousername;
         var ticket = ismessage.ticket;
-        sails.log.info('ticket:' + ticket);
+        sails.log.info('ticket:' + JSON.stringify(ismessage));
         var classrooms = await ClassRoom.find({
           classroomqrcodeticket: ticket,
         }).limit(1);
