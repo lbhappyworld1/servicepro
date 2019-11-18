@@ -117,27 +117,23 @@ requests over WebSockets instead of HTTP).`,
     sails.log.info('signature:' + signature);
     sails.log.info('wxtokeninfo:' + result);
     if(shasum === signature){
-      sails.log.info('wxtokeninfo333:' + JSON.stringify(inputs));
       var ismessage = this.req.body.xml;
       if(ismessage){
-        sails.log.info('wxtokeninfo333222:' + JSON.stringify(inputs));
         var eventme  = ismessage.event;
         var fuser  = ismessage.fromusername;
         var touser = ismessage.tousername;
         var ticket = ismessage.ticket;
-        // var classrooms = await ClassRoom.find({
-        //   classroomqrcodeticket: ticket,
-        // }).limit(1);
-
-        var classrooms = await ClassRoom.findOne({
+        sails.log.info('ticket:' + ticket);
+        var classrooms = await ClassRoom.find({
           classroomqrcodeticket: ticket,
-        });
-        sails.log.info('wxtokeninfo333222:' + JSON.stringify(classrooms));
+        }).limit(1);
+       
         var classroomsid = classrooms.id;
-        sails.log.info('wxtokeninfo333222mmm:' + classrooms.id);
-        sails.log.info('wxtokeninfo333222mmm:' + classrooms.classromName);
+        sails.log.info('classrooms:' + JSON.stringify(classrooms));
+        sails.log.info('id:' + classrooms[0].id);
+        sails.log.info('classromName:' + classrooms[0].classromName);
         
-        var msg = `你好换新加入班级sf\n<a href="http://www.911sc.cn/classroom/registeruser?classromId=${classroomsid}"+>进入班级</a>`;
+        var msg = `你好换新加入班级sf\n<a href="http://www.911sc.cn/classroom/registeruser?classromId=${classrooms[0].id}"+>进入班级</a>`;
         //关注 和 已关注
         if(eventme=="subscribe" || eventme == "SCAN"){
             var mesg = `<xml>
