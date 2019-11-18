@@ -23,7 +23,7 @@ module.exports = {
   },
 
   fn: async function (input) {
-    const axios = require('axios')
+    // const axios = require('axios')
     // axios.get('https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wxd01fdc34cb1cce99&secret=4625eb509f588c33e5f6c080a60c577b')
     // .then(function (response) {
     //   // handle success
@@ -32,7 +32,7 @@ module.exports = {
     //   console.log(response.data.access_token);
     //   var token = response.data.access_token;
     //   // https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token=TOKEN
-    //   axios.post('https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token='+token,{"expire_seconds": 1800,"action_name": "QR_LIMIT_SCENE", "action_info": {"scene": {"scene_str": "www.baidu.com"}}})
+    //   axios.post('https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token='+token,{"expire_seconds": 1800,"action_name": "QR_LIMIT_SCENE", "action_info": {"scene": {"scene_str": "ddssssss"}}})
     //   .then(function(response2){
     //     console.log(response2);
     //     var ticket  = response2.data.ticket;

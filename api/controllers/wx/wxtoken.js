@@ -123,9 +123,10 @@ requests over WebSockets instead of HTTP).`,
         var fuser  = ismessage.fromusername;
         var touser = ismessage.tousername;
         var ticket = ismessage.ticket;
+        var tkey = ismessage.eventkey;
         sails.log.info('ticket:' + JSON.stringify(ismessage));
         var classrooms = await ClassRoom.find({
-          classroomqrcodeticket: ticket,
+          id: tkey,
         }).limit(1);
        
         var classroomsid = classrooms.id;
@@ -133,7 +134,7 @@ requests over WebSockets instead of HTTP).`,
         sails.log.info('id:' + classrooms[0].id);
         sails.log.info('classromName:' + classrooms[0].classromName);
         
-        var msg = `你好换新加入班级sf\n<a href="http://www.911sc.cn/classroom/registeruser?classromId=${classrooms[0].id}"+>进入班级</a>`;
+        var msg = `你好换新加入班级sf\n<a href=http://www.911sc.cn/classroom/registeruser?classromId=${classrooms[0].id}>进入班级</a>`;
         //关注 和 已关注
         if(eventme=="subscribe" || eventme == "SCAN"){
             var mesg = `<xml>

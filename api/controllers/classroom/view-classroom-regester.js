@@ -21,7 +21,8 @@ module.exports = {
   },
 
   fn: async function (input) {
-    
+    //window.location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxd01fdc34cb1cce99&redirect_uri=http://www.911sc.cn/classroom/registeruser?classromId=5da6d770fc4a3855c8a49869&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect";
+    // http://localhost/classroom/registeruser?classromId=5da6d770fc4a3855c8a49869
     if(input.classromId){
       var classrooms = await ClassRoom.findOne({
         id: input.classromId,
