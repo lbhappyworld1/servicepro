@@ -30,8 +30,6 @@ module.exports = {
 
   fn: async function (input) {
     const axios = require('axios')
-
-
     if (input.classromId) {
       var classrooms = await ClassRoom.findOne({
         id: input.classromId,

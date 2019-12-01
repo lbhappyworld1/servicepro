@@ -56,5 +56,15 @@ parasails.registerPage('welcome', {
       // ```
     },
 
+    gotoupdateEmail:function(){
+      this.goto('/account/profile')
+    },
+    gotoclassManager:function(){
+      this.goto('/classroom/manager')
+    },
+    gotomanagerconfig:function(){
+      this.goto('/config/manager')
+    }
+
   }
 });

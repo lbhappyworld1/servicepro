@@ -120,6 +120,14 @@ Cloud.setup({
       "args": [
         "classroominfo",
       ]
+    },
+    "updateconfigbyid": {
+      "verb": "POST",
+      "url": "/api/v1/config-update",
+      "args": [
+        "keyid",,
+        "itemvalue"
+      ]
     }
   }
   /* eslint-enable */

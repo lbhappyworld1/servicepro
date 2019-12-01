@@ -111,7 +111,7 @@ parasails.registerPage('manager-classroom', {
     // corresponds with `:unused?` in the server-side route for this page.
     console.log('virtualPageSlug：' + virtualPageSlug)
     switch (virtualPageSlug) {
-      case 'hello':
+      case 'create':
         this.modal = 'example';
         break;
       default:
@@ -205,7 +205,7 @@ parasails.registerPage('manager-classroom', {
 
     clickModalButton: async function () {
       // this.modal = 'example';
-      this.goto('/classroom/manager/hello');
+      this.goto('/classroom/manager/create');
       // Or, without deep links, instead do:
       // ```
       // this.modal = 'example';

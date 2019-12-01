@@ -1,13 +1,14 @@
 <div id="welcome">
   <div class="container">
-    <h1>Welcome!</h1>
+    <h1>欢迎 登录成功!</h1>
     <hr />
-    <p>This is a page that only logged-in people can visit. Don't you feel special? Try clicking on a button below to do
-      some things you can't do when you're logged out.</p>
+    <p>
+      你有权限执行以下操作
+    </p>
     <div class="buttons">
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-md-auto">
-          <a class="btn btn-info m-2" href="/account/profile">Update my email</a>
+          
         </div>
         <div class="col-md-auto">
           <button class="btn btn-outline-info m-2" @click="clickOpenExampleModalButton()">Open a modal</button>
@@ -15,7 +16,26 @@
         <div class="col-md-auto">
           <a class="btn btn-info m-2" href="/classroom/manager">班级管理</a>
         </div>
+        <div class="col-md-auto">
+          <a class="btn btn-info m-2" href="/classroom/manager">配置</a>
+        </div>
+      </div> -->
+      <div class="row m-2">
+          <div class="btn-group-vertical">
+              <button type="button" class="btn btn-info" @click='gotoupdateEmail'>更新邮箱</button>
+              <button type="button" class="btn btn-info" @click='gotoclassManager'>班级管理</button>
+              <div class="btn-group" role="group">
+                <button id="btnGroupDrop1" type="button" @click='gotomanagerconfig' class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  配置
+                </button>
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                  <a class="dropdown-item" href="#">责任人</a>
+                  <a class="dropdown-item" href="#">班级状态</a>
+                </div>
+              </div>
+            </div>
       </div>
+      
     </div>
   </div>
 

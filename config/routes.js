@@ -41,6 +41,9 @@ module.exports.routes = {
   'GET /classroom/registeruser':    { action: 'classroom/view-classroom-regester' ,locals: {layout: 'layouts/layout_onhb'}},
 
 
+  'GET /config/manager':    { action: 'proconfig/manager-config' },
+  'POST  /api/v1/config-update':                 {action:'proconfig/update-config-byid'},
+
   //  ╔╦╗╦╔═╗╔═╗  ╦═╗╔═╗╔╦╗╦╦═╗╔═╗╔═╗╔╦╗╔═╗   ┬   ╔╦╗╔═╗╦ ╦╔╗╔╦  ╔═╗╔═╗╔╦╗╔═╗
   //  ║║║║╚═╗║    ╠╦╝║╣  ║║║╠╦╝║╣ ║   ║ ╚═╗  ┌┼─   ║║║ ║║║║║║║║  ║ ║╠═╣ ║║╚═╗
   //  ╩ ╩╩╚═╝╚═╝  ╩╚═╚═╝═╩╝╩╩╚═╚═╝╚═╝ ╩ ╚═╝  └┘   ═╩╝╚═╝╚╩╝╝╚╝╩═╝╚═╝╩ ╩═╩╝╚═╝
