@@ -134,7 +134,7 @@ requests over WebSockets instead of HTTP).`,
         // sails.log.info('id:' + classrooms[0].id);
         sails.log.info('classromName:' + classrooms[0].classromName);
         
-        var msg = "你好 欢迎加入班级"+ classrooms[0].classromName+"\n<a href='http://www.911sc.cn/classroom/registeruser?classromId="+classroomsid+"'>进入班级</a>";
+        var msg = "你好 欢迎加入班级 "+ classrooms[0].classromName+"\n<a href='http://www.911sc.cn/classroom/registeruser?classromId="+classroomsid+"'>进入班级</a>";
         //关注 和 已关注
         if(eventme=="subscribe" || eventme == "SCAN"){
             var mesg = `<xml>
