@@ -125,6 +125,9 @@ requests over WebSockets instead of HTTP).`,
         var ticket = ismessage.ticket;
         var tkey = ismessage.eventkey;
         sails.log.info('ticket:' + JSON.stringify(ismessage));
+        if(tkey.indexOf("_")!=-1){
+          tkey = tkey.split("_")[1];
+        }
         var classrooms = await ClassRoom.find({
           id: tkey,
         }).limit(1);
