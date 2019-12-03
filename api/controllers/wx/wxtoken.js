@@ -128,7 +128,7 @@ requests over WebSockets instead of HTTP).`,
         var classrooms = await ClassRoom.find({
           id: tkey,
         }).limit(1);
-       
+       sails.log.info('classrooms:' + JSON.stringify(classrooms));
         var classroomsid = classrooms[0].id;
         // sails.log.info('classrooms:' + JSON.stringify(classrooms));
         // sails.log.info('id:' + classrooms[0].id);
