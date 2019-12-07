@@ -124,10 +124,9 @@ requests over WebSockets instead of HTTP).`,
         var touser = ismessage.tousername;
         var ticket = ismessage.ticket;
         var tkey = ismessage.eventkey;
-        var reltkey = "";
         sails.log.info('ticket:' + JSON.stringify(ismessage));
-        if(tkey.indexOf("_")!=-1){
-          reltkey = tkey.split("_")[1];
+        if(tkey && tkey.toString().indexOf("_")!=-1){
+          tkey = tkey.toString().split("_")[1];
         }
         sails.log.info('tkey:' + tkey );
         sails.log.info('tkey:' + tkey.toString().indexOf("qrscene") );
