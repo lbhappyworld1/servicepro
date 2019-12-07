@@ -130,7 +130,8 @@ requests over WebSockets instead of HTTP).`,
           reltkey = tkey.split("_")[1];
         }
         sails.log.info('tkey:' + tkey );
-        sails.log.info('tkey:' + tkey.indexOf("_") );
+        sails.log.info('tkey:' + tkey.indexOf("qrscene") );
+        
         var classrooms = await ClassRoom.find({
           id: tkey,
         }).limit(1);
