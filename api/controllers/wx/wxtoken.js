@@ -124,11 +124,12 @@ requests over WebSockets instead of HTTP).`,
         var touser = ismessage.tousername;
         var ticket = ismessage.ticket;
         var tkey = ismessage.eventkey;
+        var reltkey = "";
         sails.log.info('ticket:' + JSON.stringify(ismessage));
         if(tkey.indexOf("_")!=-1){
-          tkey = tkey.split("_")[1];
+          reltkey = tkey.split("_")[1];
         }
-        sails.log.info('tkey:' + tkey);
+        sails.log.info('tkey:' + reltkey);
         var classrooms = await ClassRoom.find({
           id: tkey,
         }).limit(1);
