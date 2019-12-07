@@ -89,6 +89,8 @@ parasails.registerPage('classroom-regester', {
             console.log("submittedForm enter...regester"+this.result);
             if(result.error){
                 alert("已经注册")
+            }else{
+                alert("注册成功!可以加入QQ群XXXXXXXXX")
             }
             // if(this.isEmailVerificationRequired) {
             //   // If email confirmation is enabled, show the success message.
