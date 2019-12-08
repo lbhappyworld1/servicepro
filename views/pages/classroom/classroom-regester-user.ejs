@@ -62,6 +62,23 @@
         <input type="text" aria-label="First name" class="form-control noborder" placeholder="请填写电子邮箱" v-model.trim="formData.email">
       </div>
     </div>
+    <div class="row justify-content-start border-top mr-1 ml-1 p-2 titletxtsize">
+      <div class="col-4  d-flex align-items-center">
+        qq号码
+      </div>
+      <div class="col">
+        <input type="text" aria-label="First name" class="form-control noborder" placeholder="请填写qq号码" v-model.trim="formData.qqcode">
+      </div>
+    </div>
+    <div class="row justify-content-start border-top mr-1 ml-1 p-2 titletxtsize">
+      <div class="col-4  d-flex align-items-center">
+        所属区域
+      </div>
+      <div class="col">
+        <input type="text" aria-label="First name" class="form-control noborder" placeholder="输入罗湖区、福田区、南山区等" v-model.trim="formData.reregion">
+      </div>
+    </div>
+
   </div>
   <ajax-form action="regesteruser" :syncing.sync="syncing" :cloud-error.sync="cloudError"
           @submitted="submittedForm" :handle-parsing="handleParsingForm">

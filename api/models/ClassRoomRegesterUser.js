@@ -14,7 +14,7 @@ module.exports = {
 
     email: {
       type: 'string',
-      required: true,
+      required: false,
       unique: false,
       isEmail: true,
       maxLength: 200,
@@ -49,6 +49,16 @@ module.exports = {
     classroomid:{
       type: 'string',
       required: true,
+      description: 'classroom id.',
+    },
+    qqcode:{
+      type: 'string',
+      required: false,
+      description: 'classroom id.',
+    },
+    reregion:{
+      type: 'string',
+      required: false,
       description: 'classroom id.',
     }
 
