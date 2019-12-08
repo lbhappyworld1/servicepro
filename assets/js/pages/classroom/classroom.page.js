@@ -271,19 +271,20 @@ parasails.registerPage('manager-classroom', {
       // if (!argins.agreed) {
       //   this.formErrors.agreed = true;
       // }
-      if (this.formData.personLiable) {
-        // this.formErrors.personLiable = false;
-        delete this.formErrors['personLiable']
-      } else {
-        this.formErrors.personLiable = true;
-      }
 
-      if (this.formData.classstate) {
-        // this.formErrors.classstate = false;
-        delete this.formErrors['personLiable']
-      } else {
-        this.formErrors.classstate = true;
-      }
+      // if (this.formData.personLiable) {
+      //   // this.formErrors.personLiable = false;
+      //   delete this.formErrors['personLiable']
+      // } else {
+      //   this.formErrors.personLiable = true;
+      // }
+
+      // if (this.formData.classstate) {
+      //   // this.formErrors.classstate = false;
+      //   delete this.formErrors['personLiable']
+      // } else {
+      //   this.formErrors.classstate = true;
+      // }
       console.log("argins.priceName:" + argins.priceName);
       console.log("argins.priceName:" + JSON.stringify(this.formErrors));
       // If there were any issues, they've already now been communicated to the user,

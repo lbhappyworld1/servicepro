@@ -39,17 +39,17 @@ module.exports = {
     },
 
     personLiable: {
-      required: true,
+      required: false,
       type: 'string',
-      example: '2019/10/16 13:36',
+      example: '负责人',
       description: '任务结束时间.',
     },
 
     classstate: {
-      required: true,
+      required: false,
       type: 'string',
-      example: '2019/10/16 13:36',
-      description: '任务结束时间.',
+      example: '班级状态',
+      description: '开班',
     }
 
   },
@@ -83,8 +83,8 @@ module.exports = {
       priceName: inputs.priceName,
       signupStart: inputs.signupStart,
       signupEnd: inputs.signupEnd,
-      personLiable:inputs.personLiable,
-      classstate:inputs.classstate,
+      // personLiable:inputs.personLiable,
+      // classstate:inputs.classstate,
       createByuserId:createuser,
     }))
     .intercept('E_UNIQUE', 'emailAlreadyInUse')
