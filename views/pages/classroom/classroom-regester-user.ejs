@@ -19,7 +19,8 @@
         手机
       </div>
       <div class="col">
-        <input type="text" aria-label="First name" class="form-control noborder" placeholder="请填写手机" v-model.trim="formData.userphoto">
+        <input type="text" aria-label="First name" class="form-control noborder" placeholder="请填写手机"
+          v-model.trim="formData.userphoto">
       </div>
     </div>
     <!-- <div class="row justify-content-start border-top mr-1 ml-1 p-2 titletxtsize">
@@ -35,7 +36,8 @@
         姓名
       </div>
       <div class="col">
-        <input type="text" aria-label="First name" class="form-control noborder" placeholder="请填写姓名" v-model.trim="formData.userName">
+        <input type="text" aria-label="First name" class="form-control noborder" placeholder="请填写姓名"
+          v-model.trim="formData.userName">
       </div>
     </div>
     <div class="row justify-content-start border-top mr-1 ml-1 p-2 titletxtsize">
@@ -43,7 +45,8 @@
         身份证
       </div>
       <div class="col">
-        <input type="text" aria-label="First name" class="form-control noborder" placeholder="请填写身份证" v-model.trim="formData.userCard">
+        <input type="text" aria-label="First name" class="form-control noborder" placeholder="请填写身份证"
+          v-model.trim="formData.userCard">
       </div>
     </div>
     <div class="row justify-content-start border-top mr-1 ml-1 p-2 titletxtsize">
@@ -51,7 +54,8 @@
         工作单位
       </div>
       <div class="col">
-        <input type="text" aria-label="First name" class="form-control noborder" placeholder="请填写工作单位" v-model.trim="formData.workplace">
+        <input type="text" aria-label="First name" class="form-control noborder" placeholder="请填写工作单位"
+          v-model.trim="formData.workplace">
       </div>
     </div>
     <div class="row justify-content-start border-top mr-1 ml-1 p-2 titletxtsize">
@@ -59,7 +63,8 @@
         电子邮箱
       </div>
       <div class="col">
-        <input type="text" aria-label="First name" class="form-control noborder" placeholder="请填写电子邮箱" v-model.trim="formData.email">
+        <input type="text" aria-label="First name" class="form-control noborder" placeholder="请填写电子邮箱"
+          v-model.trim="formData.email">
       </div>
     </div>
     <div class="row justify-content-start border-top mr-1 ml-1 p-2 titletxtsize">
@@ -67,7 +72,8 @@
         qq号码
       </div>
       <div class="col">
-        <input type="text" aria-label="First name" class="form-control noborder" placeholder="请填写qq号码" v-model.trim="formData.qqcode">
+        <input type="text" aria-label="First name" class="form-control noborder" placeholder="请填写qq号码"
+          v-model.trim="formData.qqcode">
       </div>
     </div>
     <div class="row justify-content-start border-top mr-1 ml-1 p-2 titletxtsize">
@@ -75,26 +81,41 @@
         所属区域
       </div>
       <div class="col">
-        <input type="text" aria-label="First name" class="form-control noborder" placeholder="输入罗湖区、福田区、南山区等" v-model.trim="formData.reregion">
+        <input type="text" aria-label="First name" class="form-control noborder" placeholder="输入罗湖区、福田区、南山区等"
+          v-model.trim="formData.reregion">
+      </div>
+    </div>
+    <!-- {{classroom.classroominfo}} -->
+    <div v-for="(item, index) in classroomdetail" :key="index">
+     
+      <div class="row justify-content-start ">
+        <div class="col d-flex  align-items-center mb-2">
+          <div class="titletip bg-info mr-1"></div>
+          <span class="text-muted textsizes">{{item.key}}</span>
+        </div>
+      </div>
+      <div class="row titletxtsize">
+        <div class="col-12 d-flex align-items-center ">
+          {{item.value}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <ajax-form action="regesteruser" :syncing.sync="syncing" :cloud-error.sync="cloudError" @submitted="submittedForm"
+    :handle-parsing="handleParsingForm">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm d-flex justify-content-center mt-4">
+          <!-- <div class="form-inline d-none ml-2 d-md-block" @click="opendialog">
+                    <p class="btn btn-outline-dark">发布</p>
+                  </div> -->
+          <!-- <p class="nav-item nav-link text-info ml-2 d-block d-md-none btn btn-outline-dark" @click="opendialog">发布</p> -->
+          <ajax-button type="submit" :syncing="syncing" class="btn btn-primary btn-lg btn-block">提交</ajax-button>
+        </div>
       </div>
     </div>
 
-  </div>
-  <ajax-form action="regesteruser" :syncing.sync="syncing" :cloud-error.sync="cloudError"
-          @submitted="submittedForm" :handle-parsing="handleParsingForm">
-          <div class="container-fluid">
-              <div class="row">
-                <div class="col-sm d-flex justify-content-center mt-4">
-                  <!-- <div class="form-inline d-none ml-2 d-md-block" @click="opendialog">
-                    <p class="btn btn-outline-dark">发布</p>
-                  </div> -->
-                  <!-- <p class="nav-item nav-link text-info ml-2 d-block d-md-none btn btn-outline-dark" @click="opendialog">发布</p> -->
-                  <ajax-button type="submit" :syncing="syncing" class="btn btn-primary btn-lg btn-block">提交</ajax-button>
-                </div>
-              </div>
-            </div>
-		 
-       </ajax-form>
+  </ajax-form>
 </div>
 
 
