@@ -1,6 +1,6 @@
 
 
-parasails.registerPage('classroom-info', {
+parasails.registerPage('classroom-signin', {
     //  ╦╔╗╔╦╔╦╗╦╔═╗╦    ╔═╗╔╦╗╔═╗╔╦╗╔═╗
     //  ║║║║║ ║ ║╠═╣║    ╚═╗ ║ ╠═╣ ║ ║╣
     //  ╩╝╚╝╩ ╩ ╩╩ ╩╩═╝  ╚═╝ ╩ ╩ ╩ ╩ ╚═╝
@@ -27,7 +27,8 @@ parasails.registerPage('classroom-info', {
         // Success state when form has been submitted
         cloudSuccess: false,
 
-        selectList: []
+        selectList: [],
+        qrcode:""
 
     },
 
@@ -155,9 +156,8 @@ parasails.registerPage('classroom-info', {
               window.location = '/classroom/manager';
             // }
         },
-        qcsignin:async function(classroomid){
+        qcsignin:async function(){
             console.log("签到")
-            window.location = '/classroom/manager/classroomsignin?classromId='+this.classroom.id
         }
     }
 });
