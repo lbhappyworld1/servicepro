@@ -14,8 +14,7 @@ module.exports = {
 
     unionid: {
       type: 'string',
-      required: true,
-      unique: true,
+      required: false,
       maxLength: 200,
       example: 'o6_bmasdasdsad6_2sgVt7hMZOPfL'
     },
