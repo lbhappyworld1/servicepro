@@ -164,6 +164,7 @@ requests over WebSockets instead of HTTP).`,
            if(userisin.length!=0){
             msg = "您好，您已经签过到."
            }else{
+            sails.log.info('userinfo:' + JSON.stringify(userinfo));
             sails.log.info('userinfo:' + userinfo.unionid);
             sails.log.info('userinfo:' + userinfo.openid);
             sails.log.info('userinfo:' + userinfo.nickname);
