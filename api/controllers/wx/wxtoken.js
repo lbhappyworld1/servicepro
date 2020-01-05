@@ -86,6 +86,8 @@ requests over WebSockets instead of HTTP).`,
 
 
   fn: async function (inputs, exits) {
+    const axios = require('axios')
+    
     sails.log.info('wxtokeninfo enter:' + JSON.stringify(inputs));
     sails.log.info('wxtokeninfo enter2:' + JSON.stringify(this.req.body));
     // var buffer = [];
@@ -120,7 +122,9 @@ requests over WebSockets instead of HTTP).`,
       var ismessage = this.req.body.xml;
       if(ismessage){
         var eventme  = ismessage.event;
+        //openid
         var fuser  = ismessage.fromusername;
+        //微信号
         var touser = ismessage.tousername;
         var ticket = ismessage.ticket;
         var tkey = ismessage.eventkey;
@@ -148,7 +152,31 @@ requests over WebSockets instead of HTTP).`,
         sails.log.info('ttype:' + ttype);
         sails.log.info('tkey:' + tkeyall.toString().indexOf("signin") );
         if( tkeyall.toString().indexOf("signin")!=-1){
-           msg = "您好,"+classrooms[0].classromName+" 签到成功."
+           //获取用户信息https://api.weixin.qq.com/cgi-bin/user/info?access_token=ACCESS_TOKEN&openid=OPENID&lang=zh_CN
+           var wxtokent = await axios.get('https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wxd01fdc34cb1cce99&secret=4625eb509f588c33e5f6c080a60c577b')
+           var userinfo = await axios.get('https://api.weixin.qq.com/cgi-bin/user/info?access_token='+wxtokent+'&openid='+fuser+'&lang=zh_CN')
+           sails.log.info('userinfo:' + userinfo);
+           var userisin = await SigninUser.find(
+             {
+              unionid:userinfo.unionid
+             }
+           )
+           if(userisin.length!=0){
+            msg = "您好，您已经签过到."
+           }else{
+            var suser = await SigninUser.create(_.extend({
+              unionid: userinfo.unionid,
+              // emailAddress:"112@test.com",
+              openid: userinfo.openid,
+              nickname: userinfo.nickname,
+              classroomid: classroomsid,
+              // personLiable:inputs.personLiable,
+              // classstate:inputs.classstate,
+              issignin:"Y",
+            }))
+            msg = "您好,"+userinfo.nickname+" "+classrooms[0].classromName+" 签到成功."
+           }
+           
         }
         //关注 和 已关注
         if(eventme=="subscribe" || eventme == "SCAN"){
