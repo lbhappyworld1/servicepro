@@ -164,6 +164,9 @@ requests over WebSockets instead of HTTP).`,
            if(userisin.length!=0){
             msg = "您好，您已经签过到."
            }else{
+            sails.log.info('userinfo:' + userinfo.unionid);
+            sails.log.info('userinfo:' + userinfo.openid);
+            sails.log.info('userinfo:' + userinfo.nickname);
             var suser = await SigninUser.create(_.extend({
               unionid: userinfo.unionid,
               // emailAddress:"112@test.com",
