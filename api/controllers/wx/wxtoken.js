@@ -170,10 +170,10 @@ requests over WebSockets instead of HTTP).`,
             sails.log.info('userinfo:' + userinfo.nickname);
             sails.log.info('userinfo:' + userinfo.errmsg);
             var suser = await SigninUser.create(_.extend({
-              unionid: userinfo.unionid,
+              unionid:fuser,
               // emailAddress:"112@test.com",
-              openid: userinfo.openid,
-              nickname: userinfo.nickname,
+              openid: touser,
+              nickname: "test",
               classroomid: classroomsid,
               // personLiable:inputs.personLiable,
               // classstate:inputs.classstate,
