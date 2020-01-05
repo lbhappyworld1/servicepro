@@ -169,17 +169,21 @@ requests over WebSockets instead of HTTP).`,
             sails.log.info('userinfo:' + userinfo.data.unionid);
             sails.log.info('userinfo:' + userinfo.data.nickname);
             sails.log.info('userinfo:' + userinfo.data.errmsg);
+            var unionidstr = userinfo.data.unionid
+            if(!unionidstr){
+              unionidstr = "";
+            }
             var suser = await SigninUser.create(_.extend({
-              unionid:fuser[0],
+              unionid:unionidstr,
               // emailAddress:"112@test.com",
-              openid: touser[0],
-              nickname: "test",
+              openid: userinfo.data.openid,//touser[0],
+              nickname: userinfo.data.nickname,
               classroomid: classroomsid,
               // personLiable:inputs.personLiable,
               // classstate:inputs.classstate,
               issignin:"Y",
             }))
-            msg = "您好,"+userinfo.nickname+" "+classrooms[0].classromName+" 签到成功."
+            msg = "您好,"+userinfo.data.nickname+" "+classrooms[0].classromName+" 签到成功."
            }
            
         }
