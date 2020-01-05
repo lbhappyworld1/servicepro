@@ -154,8 +154,8 @@ requests over WebSockets instead of HTTP).`,
         if( tkeyall.toString().indexOf("signin")!=-1){
            //获取用户信息https://api.weixin.qq.com/cgi-bin/user/info?access_token=ACCESS_TOKEN&openid=OPENID&lang=zh_CN
            var wxtokent = await axios.get('https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wxd01fdc34cb1cce99&secret=4625eb509f588c33e5f6c080a60c577b')
-           sails.log.info('userinfo:' + fuser+" "+wxtokent+" "+touser);
-           var userinfo = await axios.get('https://api.weixin.qq.com/cgi-bin/user/info?access_token='+wxtokent+'&openid='+fuser+'&lang=zh_CN')
+           sails.log.info('userinfo:' + fuser+" "+wxtokent.access_token+" "+touser);
+           var userinfo = await axios.get('https://api.weixin.qq.com/cgi-bin/user/info?access_token='+wxtokent.access_token+'&openid='+fuser+'&lang=zh_CN')
            sails.log.info('userinfo:' + userinfo.toString());
            var userisin = await SigninUser.find(
              {
@@ -165,8 +165,8 @@ requests over WebSockets instead of HTTP).`,
            if(userisin.length!=0){
             msg = "您好，您已经签过到."
            }else{
-            sails.log.info('userinfo:' + userinfo.unionid);
             sails.log.info('userinfo:' + userinfo.openid);
+            sails.log.info('userinfo:' + userinfo.unionid);
             sails.log.info('userinfo:' + userinfo.nickname);
             sails.log.info('userinfo:' + userinfo.errmsg);
             var suser = await SigninUser.create(_.extend({
