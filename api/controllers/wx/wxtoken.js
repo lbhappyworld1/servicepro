@@ -155,7 +155,7 @@ requests over WebSockets instead of HTTP).`,
            //获取用户信息https://api.weixin.qq.com/cgi-bin/user/info?access_token=ACCESS_TOKEN&openid=OPENID&lang=zh_CN
            var wxtokent = await axios.get('https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wxd01fdc34cb1cce99&secret=4625eb509f588c33e5f6c080a60c577b')
            var userinfo = await axios.get('https://api.weixin.qq.com/cgi-bin/user/info?access_token='+wxtokent+'&openid='+fuser+'&lang=zh_CN')
-           sails.log.info('userinfo:' + userinfo);
+           sails.log.info('userinfo:' + JSON.stringify(userinfo));
            var userisin = await SigninUser.find(
              {
               unionid:userinfo.unionid
