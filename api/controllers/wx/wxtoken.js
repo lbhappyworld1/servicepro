@@ -125,6 +125,7 @@ requests over WebSockets instead of HTTP).`,
         var ticket = ismessage.ticket;
         var tkey = ismessage.eventkey;
         var ttype;
+        var tkeyall = ismessage.eventkey;
         sails.log.info('ticket:' + JSON.stringify(ismessage));
         if(tkey && tkey.toString().indexOf("_")!=-1){
           tkey = tkey.toString().split("_")[1];
@@ -145,8 +146,8 @@ requests over WebSockets instead of HTTP).`,
         
         var msg = "你好 欢迎加入班级 "+ classrooms[0].classromName+"\n<a href='http://www.911sc.cn/classroom/registeruser?classromId="+classroomsid+"'>进入班级</a>";
         sails.log.info('ttype:' + ttype);
-        sails.log.info('tkey:' + tkey.toString().indexOf("signin") );
-        if(ttype && ttype=="signin"){
+        sails.log.info('tkey:' + tkeyall.toString().indexOf("signin") );
+        if( tkeyall.toString().indexOf("signin")!=-1){
            msg = "您好,"+classrooms[0].classromName+" 签到成功."
         }
         //关注 和 已关注
