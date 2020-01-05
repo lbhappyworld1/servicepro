@@ -157,7 +157,7 @@ parasails.registerPage('classroom-info', {
         },
         qcsignin:async function(classroomid){
             console.log("签到")
-            window.location = '/classroom/manager/classroomsignin?classromId='+this.classroom.id
+            window.location = '/classroom/manager/classroomsignin?classromId='+this.classroom.id+'&isrefresh=Y'
         }
     }
 });
