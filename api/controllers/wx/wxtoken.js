@@ -172,7 +172,7 @@ requests over WebSockets instead of HTTP).`,
             var suser = await SigninUser.create(_.extend({
               unionid:fuser[0],
               // emailAddress:"112@test.com",
-              openid: touser,
+              openid: touser[0],
               nickname: "test",
               classroomid: classroomsid,
               // personLiable:inputs.personLiable,
