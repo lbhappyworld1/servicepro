@@ -49,15 +49,15 @@ parasails.registerPage('classroom-signin', {
 
     },
     mounted: async function () {
-        console.log("mounted:");
-        if(Object.keys(this.classroom).length > 0 ){
-            var objects = this.classroom.classroominfo
-            if(objects){
-                this.classroominfoObj = JSON.parse(objects)
-            }else{
-                this.loaddefault()
-            } 
-        }
+         console.log("mounted:");
+        // if(Object.keys(this.classroom).length > 0 ){
+        //     var objects = this.classroom.classroominfo
+        //     if(objects){
+        //         this.classroominfoObj = JSON.parse(objects)
+        //     }else{
+        //         this.loaddefault()
+        //     } 
+        // }
     },
     //  ╦  ╦╦╦═╗╔╦╗╦ ╦╔═╗╦    ╔═╗╔═╗╔═╗╔═╗╔═╗
     //  ╚╗╔╝║╠╦╝ ║ ║ ║╠═╣║    ╠═╝╠═╣║ ╦║╣ ╚═╗

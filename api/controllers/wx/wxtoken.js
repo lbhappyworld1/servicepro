@@ -159,7 +159,8 @@ requests over WebSockets instead of HTTP).`,
            sails.log.info('userinfo:' + userinfo.toString());
            var userisin = await SigninUser.find(
              {
-              unionid:userinfo.unionid
+              openid:userinfo.data.openid,
+              classroomid:classroomid
              }
            )
            if(userisin.length!=0){
