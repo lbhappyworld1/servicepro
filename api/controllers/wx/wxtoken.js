@@ -160,7 +160,7 @@ requests over WebSockets instead of HTTP).`,
            var userisin = await SigninUser.find(
              {
               openid:userinfo.data.openid,
-              classroomid:classroomid
+              classroomid:classroomsid
              }
            )
            if(userisin.length!=0){
