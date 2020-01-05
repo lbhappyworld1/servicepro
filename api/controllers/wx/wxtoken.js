@@ -145,6 +145,7 @@ requests over WebSockets instead of HTTP).`,
         
         var msg = "你好 欢迎加入班级 "+ classrooms[0].classromName+"\n<a href='http://www.911sc.cn/classroom/registeruser?classromId="+classroomsid+"'>进入班级</a>";
         sails.log.info('ttype:' + ttype);
+        sails.log.info('tkey:' + tkey.toString().indexOf("signin") );
         if(ttype && ttype=="signin"){
            msg = "您好,"+classrooms[0].classromName+" 签到成功."
         }
