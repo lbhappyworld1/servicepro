@@ -164,7 +164,8 @@ requests over WebSockets instead of HTTP).`,
               description: "璞展学习文章"
             }))
           }else{
-            pzcontent = JSON.parse(pzkeys[0])
+            sails.log.info('pzcontent:' + JSON.stringify(pzkeys));
+            pzcontent = JSON.parse(pzkeys)
           }
 
           sails.log.info('pzcontent:' + JSON.stringify(pzcontent));
