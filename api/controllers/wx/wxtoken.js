@@ -221,7 +221,7 @@ requests over WebSockets instead of HTTP).`,
             }))
           }else{
             sails.log.info('pzcontent:' + JSON.stringify(toptitleps[0]));
-            msgtxt = JSON.parse(toptitleps[0].keyvalue)
+            msgtxt = toptitleps[0].keyvalue
           }
           
           var mesg3 = `<xml>
