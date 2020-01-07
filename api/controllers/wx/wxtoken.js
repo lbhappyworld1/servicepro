@@ -165,7 +165,7 @@ requests over WebSockets instead of HTTP).`,
             }))
           }else{
             sails.log.info('pzcontent:' + JSON.stringify(pzkeys[0]));
-            pzcontent = JSON.parse(pzkeys[0].toString())
+            pzcontent = pzkeys[0]
           }
 
           sails.log.info('pzcontent2:' + typeof(pzcontent));
