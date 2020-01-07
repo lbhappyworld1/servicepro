@@ -138,8 +138,8 @@ requests over WebSockets instead of HTTP).`,
         
         sails.log.info('tkey:' + tkey );
         sails.log.info('tkey:' + tkey.toString().indexOf("qrscene") );
-        
-        if(tkeyall.indexOf("CLICK_ABOUT_PZ")){
+        sails.log.info('tkey:' + tkeyall.toString().indexOf("CLICK_ABOUT_PZ") );
+        if(tkeyall.toString().indexOf("CLICK_ABOUT_PZ")!=-1){
           var createtime = new Date().getTime();
           var mesg2 = `
             <xml>
