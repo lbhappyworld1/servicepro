@@ -200,13 +200,30 @@ requests over WebSockets instead of HTTP).`,
        if(classrooms.length==0){
         //关注 和 已关注
         if(eventme=="subscribe" || eventme == "SCAN"){
-          var msgtxt = ` hi~这里是璞展学习
-          我们为各大学校和企业提供专业心理服务，解答他们心里的问题。
-          而在这里，我们也会用心理学为你解决你在工作中、生活中所遇到的问题。
-          从今天开始，广州润心将成为你心灵成长的伴侣，成为为你解决问题的朋友。
-          实用简单小测试，了解自己内心的真实想法。
-          点进来，看看这里有没有你需要的线下业务。
-          如果你有什么想了解的，想聊聊的，欢迎给我们留言`
+
+          var toptitleps = await KeyrelationT.find({
+            keyword: "pztoptitle",
+          }).limit(1);
+          var msgtxt;
+          if(toptitleps.length==0){
+            msgtxt = ` hi~这里是璞展学习
+            我们为各大学校和企业提供专业心理服务，解答他们心里的问题。
+            而在这里，我们也会用心理学为你解决你在工作中、生活中所遇到的问题。
+            从今天开始，广州润心将成为你心灵成长的伴侣，成为为你解决问题的朋友。
+            实用简单小测试，了解自己内心的真实想法。
+            点进来，看看这里有没有你需要的线下业务。
+            如果你有什么想了解的，想聊聊的，欢迎给我们留言`
+            await KeyrelationT.create(_.extend({
+              keyword: "pztoptitle",
+              // emailAddress:"112@test.com",
+              keyvalue: msgtxt,
+              description: "璞展学习注册回答语句"
+            }))
+          }else{
+            sails.log.info('pzcontent:' + JSON.stringify(toptitleps[0]));
+            msgtxt = JSON.parse(toptitleps[0].keyvalue)
+          }
+          
           var mesg3 = `<xml>
           <ToUserName><![CDATA[${fuser}]]></ToUserName>
           <FromUserName><![CDATA[${touser}]]></FromUserName>
