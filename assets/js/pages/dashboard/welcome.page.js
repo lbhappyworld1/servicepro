@@ -64,6 +64,9 @@ parasails.registerPage('welcome', {
     },
     gotomanagerconfig:function(){
       this.goto('/config/manager')
+    },
+    gotoselfmenu:function(){
+      this.goto('/wx/createmenu')
     }
 
   }

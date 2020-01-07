@@ -1,0 +1,31 @@
+<div id="edit-menu" v-cloak>
+  <div class="container">
+    <h1>自定义菜单界面</h1>
+    <hr/>
+    <ajax-form action="createMenu" :syncing.sync="syncing" :cloud-error.sync="cloudError" @submitted="submittedForm()" :handle-parsing="handleParsingForm">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="form-group">
+            <label for="full-name">设置自定义菜单</label>
+            <!-- <input class="form-control" id="full-name" name="full-name" type="text"  :class="[formErrors.fullName ? 'is-invalid' : '']" v-model.trim="formData.fullName" placeholder="Sturgis P. Sturgeon" autocomplete="name" focus-first> -->
+            <textarea class="form-control" aria-label="自定义菜单" v-model.trim="formData.menutxt"></textarea>
+            <div class="invalid-feedback" v-if="formErrors.fullName">Please enter your full name.</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <p class="text-danger" v-if="cloudError === 'emailAlreadyInUse'">There is already an account using that email address.</p>
+          <p class="text-danger" v-else-if="cloudError">An error occured while processing your request. Please check your information and try again, or <a href="/contact">contact support</a> if the error persists.</p>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group text-right">
+            <a class="btn btn-outline-info" href="/welcome">取消</a>
+            <ajax-button type="submit" :syncing="syncing" class="btn btn-dark">保存</ajax-button>
+          </div>
+        </div>
+      </div>
+    </ajax-form>
+  </div>
+</div>
+<%- /* Expose locals as `window.SAILS_LOCALS` :: */ exposeLocalsToBrowser() %>

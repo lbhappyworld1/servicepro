@@ -40,7 +40,7 @@ module.exports.routes = {
   'GET /classroom/manager/classroominforelease':    { action: 'classroom/view-classroom-info-release' },
   'GET /classroom/manager/classroomsignin':    { action: 'classroom/view-classroom-signin' },
   'GET /classroom/registeruser':    { action: 'classroom/view-classroom-regester' ,locals: {layout: 'layouts/layout_onhb'}},
-
+  'GET /wx/createmenu':                           { action: 'wx/view-edit-menu' },
 
   'GET /config/manager':    { action: 'proconfig/manager-config' },
   'POST  /api/v1/config-update':                 {action:'proconfig/update-config-byid'},
@@ -76,7 +76,10 @@ module.exports.routes = {
   'POST  /api/v1/crate-class-room ':                     {action: 'classroom/create-class-room'},
   'POST  /api/v1/update-class-roominfo':                 {action:'classroom/update-class-roominfo'},
   'POST  /api/v1/regester-class-roominfo':                 {action:'classroom/regester-class-roominfo'},
-  'POST  /wxtoken':                           { action: 'wx/wxtoken' }
+  'POST  /wxtoken':                           { action: 'wx/wxtoken' },
+  'POST  /api/v1/create/menutxt':                        { action: 'wx/createmenu' },
+  
+
 
   
 

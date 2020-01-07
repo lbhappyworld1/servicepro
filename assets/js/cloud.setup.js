@@ -128,7 +128,14 @@ Cloud.setup({
         "keyid",,
         "itemvalue"
       ]
-    }
+    },
+    "createMenu": {
+      "verb": "POST",
+      "url": "/api/v1/create/menutxt",
+      "args": [
+        "menutxt",
+      ]
+    },
   }
   /* eslint-enable */
 
