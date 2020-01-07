@@ -147,8 +147,14 @@ requests over WebSockets instead of HTTP).`,
               <FromUserName><![CDATA[${touser}]]></FromUserName>
               <CreateTime>${createtime}</CreateTime>
               <MsgType><![CDATA[news]]></MsgType>
-              <ArticleCount>1</ArticleCount>
+              <ArticleCount>2</ArticleCount>
               <Articles>
+                <item>
+                  <Title><![CDATA[璞展学习]]></Title>
+                  <Description><![CDATA[璞展学习]]></Description>
+                  <PicUrl><![CDATA[https://mmbiz.qpic.cn/sz_mmbiz_png/3Y5T7hYGhabBsyFia4UxKRVFic8IqiaS3Vnw2TduepsRAzUBgcBRNWHr7KeFJovHZ6ibEEMHvEt2CkxFWyeXeW8s2A/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1]]></PicUrl>
+                  <Url><![CDATA[https://mp.weixin.qq.com/s?__biz=MzI5NTY5MDAxMQ==&tempkey=MTA0Ml9sSURlemptOVRUQ3RncjBnbmg0U1pqSmZFcFo1Z0F4dXVwVmNEbkd0Q0dSSU9ya05zLTY0MGJfQ0dQRnBmemd4MHMyVkJvVjFwR0FFLXVnenVLZW5rd0xuWmFYS0xESTRsUE9icmZmQjZ5N0dITG9Pbkp6SmVtdUxmbEFKSmNrSWlqd3BDT0dVUlBTZ0RGN09qSzdvY2lBVkdydnVnOTdyX2ZXOG93fn4%3D&chksm=6c4e8b765b39026020d0c1f18785207f6226efa0930575a164370bea504e5f1550786982fe05#rd]]></Url>
+                </item>
                 <item>
                   <Title><![CDATA[璞展学习]]></Title>
                   <Description><![CDATA[璞展学习]]></Description>
