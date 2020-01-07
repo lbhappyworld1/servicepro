@@ -165,10 +165,11 @@ requests over WebSockets instead of HTTP).`,
             }))
           }else{
             sails.log.info('pzcontent:' + JSON.stringify(pzkeys[0]));
-            pzcontent = pzkeys[0]
+            pzcontent = JSON.parse(pzkeys[0].toString())
           }
 
-          sails.log.info('pzcontent2:' + pzcontent);
+          sails.log.info('pzcontent2:' + typeof(pzcontent));
+          sails.log.info('pzcontent2:' + pzcontent.toString());
           var mesg2 = `
             <xml>
               <ToUserName><![CDATA[${fuser}]]></ToUserName>
