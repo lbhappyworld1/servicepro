@@ -142,6 +142,30 @@ requests over WebSockets instead of HTTP).`,
         //按钮事件点击
         if(tkeyall.toString().indexOf("CLICK_ABOUT_PZ")!=-1){
           var createtime = new Date().getTime();
+          var pzkeys = await KeyrelationT.find({
+            keyword: "pzabout",
+          }).limit(1);
+
+          var pzcontent = {
+            title:'璞展学习',
+            tdescription:'璞展学习',
+            tpicurl:'https://mmbiz.qpic.cn/sz_mmbiz_png/3Y5T7hYGhabBsyFia4UxKRVFic8IqiaS3Vnw2TduepsRAzUBgcBRNWHr7KeFJovHZ6ibEEMHvEt2CkxFWyeXeW8s2A/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1',
+            turl:'https://mp.weixin.qq.com/s?__biz=MzI5NTY5MDAxMQ==&tempkey=MTA0Ml9sSURlemptOVRUQ3RncjBnbmg0U1pqSmZFcFo1Z0F4dXVwVmNEbkd0Q0dSSU9ya05zLTY0MGJfQ0dQRnBmemd4MHMyVkJvVjFwR0FFLXVnenVLZW5rd0xuWmFYS0xESTRsUE9icmZmQjZ5N0dITG9Pbkp6SmVtdUxmbEFKSmNrSWlqd3BDT0dVUlBTZ0RGN09qSzdvY2lBVkdydnVnOTdyX2ZXOG93fn4%3D&chksm=6c4e8b765b39026020d0c1f18785207f6226efa0930575a164370bea504e5f1550786982fe05#rd',
+            btitle:'璞展学习',
+            btdescription:'璞展学习',
+            btpicurl:'https://mmbiz.qpic.cn/sz_mmbiz_png/3Y5T7hYGhabBsyFia4UxKRVFic8IqiaS3Vnw2TduepsRAzUBgcBRNWHr7KeFJovHZ6ibEEMHvEt2CkxFWyeXeW8s2A/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1',
+            bturl:'https://mp.weixin.qq.com/s?__biz=MzI5NTY5MDAxMQ==&tempkey=MTA0Ml9sSURlemptOVRUQ3RncjBnbmg0U1pqSmZFcFo1Z0F4dXVwVmNEbkd0Q0dSSU9ya05zLTY0MGJfQ0dQRnBmemd4MHMyVkJvVjFwR0FFLXVnenVLZW5rd0xuWmFYS0xESTRsUE9icmZmQjZ5N0dITG9Pbkp6SmVtdUxmbEFKSmNrSWlqd3BDT0dVUlBTZ0RGN09qSzdvY2lBVkdydnVnOTdyX2ZXOG93fn4%3D&chksm=6c4e8b765b39026020d0c1f18785207f6226efa0930575a164370bea504e5f1550786982fe05#rd',
+          }
+          if (pzkeys.length==0){
+            await KeyrelationT.create(_.extend({
+              keyword: "pzabout",
+              // emailAddress:"112@test.com",
+              keyvalue: JSON.stringify(pzcontent),
+              description: "璞展学习文章"
+            }))
+          }else{
+            pzcontent = pzkeys[0]
+          }
           var mesg2 = `
             <xml>
               <ToUserName><![CDATA[${fuser}]]></ToUserName>
@@ -151,16 +175,16 @@ requests over WebSockets instead of HTTP).`,
               <ArticleCount>2</ArticleCount>
               <Articles>
                 <item>
-                  <Title><![CDATA[璞展学习]]></Title>
-                  <Description><![CDATA[璞展学习]]></Description>
-                  <PicUrl><![CDATA[https://mmbiz.qpic.cn/sz_mmbiz_png/3Y5T7hYGhabBsyFia4UxKRVFic8IqiaS3Vnw2TduepsRAzUBgcBRNWHr7KeFJovHZ6ibEEMHvEt2CkxFWyeXeW8s2A/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1]]></PicUrl>
-                  <Url><![CDATA[https://mp.weixin.qq.com/s?__biz=MzI5NTY5MDAxMQ==&tempkey=MTA0Ml9sSURlemptOVRUQ3RncjBnbmg0U1pqSmZFcFo1Z0F4dXVwVmNEbkd0Q0dSSU9ya05zLTY0MGJfQ0dQRnBmemd4MHMyVkJvVjFwR0FFLXVnenVLZW5rd0xuWmFYS0xESTRsUE9icmZmQjZ5N0dITG9Pbkp6SmVtdUxmbEFKSmNrSWlqd3BDT0dVUlBTZ0RGN09qSzdvY2lBVkdydnVnOTdyX2ZXOG93fn4%3D&chksm=6c4e8b765b39026020d0c1f18785207f6226efa0930575a164370bea504e5f1550786982fe05#rd]]></Url>
+                  <Title><![CDATA[${pzcontent.title}]]></Title>
+                  <Description><![${pzcontent.tdescription}]]></Description>
+                  <PicUrl><![CDATA[${pzcontent.tpicurl}]]></PicUrl>
+                  <Url><![CDATA[${pzcontent.turl}]]></Url>
                 </item>
                 <item>
-                  <Title><![CDATA[璞展学习]]></Title>
-                  <Description><![CDATA[璞展学习]]></Description>
-                  <PicUrl><![CDATA[https://mmbiz.qpic.cn/sz_mmbiz_png/3Y5T7hYGhabBsyFia4UxKRVFic8IqiaS3Vnw2TduepsRAzUBgcBRNWHr7KeFJovHZ6ibEEMHvEt2CkxFWyeXeW8s2A/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1]]></PicUrl>
-                  <Url><![CDATA[https://mp.weixin.qq.com/s?__biz=MzI5NTY5MDAxMQ==&tempkey=MTA0Ml9sSURlemptOVRUQ3RncjBnbmg0U1pqSmZFcFo1Z0F4dXVwVmNEbkd0Q0dSSU9ya05zLTY0MGJfQ0dQRnBmemd4MHMyVkJvVjFwR0FFLXVnenVLZW5rd0xuWmFYS0xESTRsUE9icmZmQjZ5N0dITG9Pbkp6SmVtdUxmbEFKSmNrSWlqd3BDT0dVUlBTZ0RGN09qSzdvY2lBVkdydnVnOTdyX2ZXOG93fn4%3D&chksm=6c4e8b765b39026020d0c1f18785207f6226efa0930575a164370bea504e5f1550786982fe05#rd]]></Url>
+                  <Title><![CDATA[${pzcontent.btitle}]]></Title>
+                  <Description><![CDATA[${pzcontent.btdescription}]]></Description>
+                  <PicUrl><![CDATA[${pzcontent.btpicurl}]]></PicUrl>
+                  <Url><![CDATA[${pzcontent.bturl}]]></Url>
                 </item>
               </Articles>
             </xml>`
