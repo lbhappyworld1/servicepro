@@ -48,8 +48,8 @@ module.exports.datastores = {
     *    (See https://sailsjs.com/config/datastores for help.)                 *
     *                                                                          *
     ***************************************************************************/
-    adapter: 'sails-mongo',
-    url: 'mongodb://120.24.56.53:27017/ccproject',
+    // adapter: 'sails-mongo',
+    // url: 'mongodb://120.24.56.53:27017/ccproject',
     // adapter: 'sails-mysql',
     // url:'mysql://libin:lb103818443@120.79.79.130:3306/webuild',
     // adapter: 'sails-mysql',
@@ -60,6 +60,12 @@ module.exports.datastores = {
     // adapter: 'sails-mysql',
     //url: 'mysql://user:password@host:port/database',
     // url: 'mysql://root:123456@localhost:3306/sails',
+    adapter: 'sails-mysql',
+    host: '120.79.79.130',
+    port: 3306,
+    user: 'libin',
+    password: 'lb103818443',
+    database: 'webuild'
   },
 
 
