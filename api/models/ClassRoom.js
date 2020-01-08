@@ -56,6 +56,7 @@ module.exports = {
 
           classroominfo: {
             required: false,
+            maxLength: 1000,
             type: 'string',
             example: '"{a:1}"',
             description: '班级详情json 数据 以key-value{"培训地点":"南头小学"}方式给出',
