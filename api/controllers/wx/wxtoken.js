@@ -197,6 +197,7 @@ requests over WebSockets instead of HTTP).`,
         var classrooms = await ClassRoom.find({
           id: tkey,
         }).limit(1);
+        sails.log.info('classrooms:' + JSON.stringify(classrooms));
        if(classrooms.length==0){
         //关注 和 已关注
         if(eventme=="subscribe" || eventme == "SCAN"){

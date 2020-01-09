@@ -56,21 +56,23 @@ module.exports = {
 
           classroominfo: {
             required: false,
+            // type: 'string',
+            // maxLength: 1000,
             type: 'string',
-            maxLength: 1000,
+            columnType: 'varchar(1000)',
             example: '"{a:1}"',
             description: '班级详情json 数据 以key-value{"培训地点":"南头小学"}方式给出',
           },
           classroomqrcodeurl: {
             required: false,
             type: 'string',
-            maxLength: 1000,
+            // length: 1000,
             example: 'www.xxxxxx.com',
             description: '班级详情json 数据 以key-value{"培训地点":"南头小学"}方式给出',
           },
           classroomqrcodeticket: {
             required: false,
-            maxLength: 1000,
+            // maxLength: 1000,
             type: 'string',
             example: 'XXXXXXXXX',
             description: 'gQHt8DwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyYW1jVjBaclpkTTQxMDAwMHcwM0kAAgTBfspdAwQAAAAA',
