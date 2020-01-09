@@ -18,6 +18,7 @@ module.exports = {
     },
     keyvalue:{
       type: 'string',
+      columnType: 'varchar(1000)',
       unique: false,
       example: 'env,cus'
     },
