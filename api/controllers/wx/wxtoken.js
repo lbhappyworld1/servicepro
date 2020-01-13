@@ -113,7 +113,8 @@ requests over WebSockets instead of HTTP).`,
 
     if (shasum === signature) {
       result = inputs.body = echostr
-      if(!this.req.body.xml){
+      var xmlstr = this.req.body.xml;
+      if(typeof(xmlstr)=="undefined"){
         return exits.success(result);
       }
     }
