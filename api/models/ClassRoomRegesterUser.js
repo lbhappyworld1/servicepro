@@ -60,6 +60,11 @@ module.exports = {
       type: 'string',
       required: false,
       description: 'classroom id.',
+    },
+    openid:{
+      type: 'string',
+      required: false,
+      description: 'classroom id.',
     }
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗

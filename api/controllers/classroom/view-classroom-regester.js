@@ -13,6 +13,12 @@ module.exports = {
       example: 'sde415esfsseeds85Seefxd',
       description: 'The class Room id.',
     },
+    openid: {
+      required: false,
+      type: 'string',
+      example: 'sde415esfsseeds85Seefxd',
+      description: 'The class Room id.',
+    },
   },
   exits: {
     success: {
@@ -29,7 +35,8 @@ module.exports = {
       });
       sails.log.info('create class room...enter user id:'+JSON.stringify(classrooms));
       return {
-        classroom:classrooms
+        classroom:classrooms,
+        openid:input.openid
       }
     }else{
       return {}
